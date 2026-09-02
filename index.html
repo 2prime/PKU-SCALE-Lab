@@ -92,3 +92,29 @@ description: "PKU SCALE Lab develops mathematical foundations and scalable algor
   </div>
 </section>
 
+<section class="section soft">
+  <div class="shell">
+    <div class="section-head">
+      <div><div class="eyebrow">Latest writing</div><h2>From the lab blog.</h2></div>
+      <p>Research notes, mathematical perspectives, and updates from members of PKU SCALE Lab.</p>
+    </div>
+    {% if site.posts.size > 0 %}
+    <div class="blog-grid">
+      {% for post in site.posts limit:3 %}
+      <article class="blog-card">
+        <div class="blog-meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+          {% if post.tags and post.tags != empty %}<span>{{ post.tags | first | replace: '-', ' ' }}</span>{% endif %}
+        </div>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p>{{ post.description | default: post.excerpt | strip_html | strip_newlines | truncate: 170 }}</p>
+        <a class="text-link" href="{{ post.url | relative_url }}">Read article →</a>
+      </article>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="blog-empty">Research notes and lab updates will appear here.</div>
+    {% endif %}
+    <div class="section-action"><a class="text-link" href="{{ '/blog/' | relative_url }}">Visit the blog →</a></div>
+  </div>
+</section>

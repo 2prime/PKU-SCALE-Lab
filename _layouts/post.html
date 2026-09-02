@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<article>
+  <header class="article-hero">
+    <div class="shell article-heading">
+      <a class="article-label" href="{{ '/blog/' | relative_url }}">PKU SCALE Lab Blog</a>
+      <h1>{{ page.title }}</h1>
+      {% if page.description %}<p class="article-description">{{ page.description }}</p>{% endif %}
+      <div class="article-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+        <span>{{ page.author | default: site.title }}</span>
+        {% if page.tags and page.tags != empty %}<span>{{ page.tags | join: " · " }}</span>{% endif %}
+      </div>
+    </div>
+  </header>
+  <div class="shell article-section">
+    <div class="article-body">{{ content }}</div>
+    <footer class="article-footer">
+      <a class="text-link" href="{{ '/blog/' | relative_url }}">← All articles</a>
+      <a class="text-link" href="{{ '/' | relative_url }}">Lab homepage →</a>
+    </footer>
+  </div>
+</article>

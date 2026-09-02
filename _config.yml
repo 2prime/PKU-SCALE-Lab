@@ -6,6 +6,14 @@ lang: "en"
 timezone: "Asia/Shanghai"
 permalink: pretty
 markdown: kramdown
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      nav: blog
+      permalink: "/blog/:year/:month/:day/:title/"
 exclude:
   - README.md
-
+  - BLOGGING.md

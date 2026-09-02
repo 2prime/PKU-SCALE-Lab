@@ -1,0 +1,34 @@
+---
+layout: default
+title: Blog
+nav: blog
+description: "Research notes, mathematical perspectives, and group updates from PKU SCALE Lab."
+---
+<header class="page-intro">
+  <div class="shell intro-grid">
+    <div><span class="page-number">05 · Blog</span><h1>Notes from the lab.</h1></div>
+    <p class="lede">Research notes, mathematical perspectives, and updates from members of PKU SCALE Lab.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="shell">
+    {% if site.posts.size > 0 %}
+    <div class="blog-grid">
+      {% for post in site.posts %}
+      <article class="blog-card">
+        <div class="blog-meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+          {% if post.tags and post.tags != empty %}<span>{{ post.tags | first | replace: '-', ' ' }}</span>{% endif %}
+        </div>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p>{{ post.description | default: post.excerpt | strip_html | strip_newlines | truncate: 190 }}</p>
+        <a class="text-link" href="{{ post.url | relative_url }}">Read article →</a>
+      </article>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="blog-empty">Research notes and lab updates will appear here.</div>
+    {% endif %}
+  </div>
+</section>
