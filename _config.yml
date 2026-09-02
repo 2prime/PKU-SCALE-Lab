@@ -1,0 +1,11 @@
+title: "PKU SCALE Lab"
+description: "Scientific Computing And LEarning at BICMR, Peking University"
+url: "https://2prime.github.io"
+baseurl: "/PKU-SCALE-Lab"
+lang: "en"
+timezone: "Asia/Shanghai"
+permalink: pretty
+markdown: kramdown
+exclude:
+  - README.md
+

@@ -1,0 +1,23 @@
+<header class="site-header">
+  <div class="shell nav-shell">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="PKU SCALE Lab home">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="brand-copy">
+        <strong>PKU SCALE Lab</strong>
+        <small>Scientific Computing And LEarning</small>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span><span></span><span class="sr-only">Toggle navigation</span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+      <a{% if page.nav == 'research' %} class="active"{% endif %} href="{{ '/research/' | relative_url }}">Research</a>
+      <a{% if page.nav == 'people' %} class="active"{% endif %} href="{{ '/people/' | relative_url }}">People</a>
+      <a{% if page.nav == 'publications' %} class="active"{% endif %} href="{{ '/publications/' | relative_url }}">Publications</a>
+      <a{% if page.nav == 'news' %} class="active"{% endif %} href="{{ '/news/' | relative_url }}">News</a>
+      <a{% if page.nav == 'resources' %} class="active"{% endif %} href="{{ '/resources/' | relative_url }}">Resources</a>
+      <a class="nav-cta{% if page.nav == 'join' %} active{% endif %}" href="{{ '/join/' | relative_url }}">Join us</a>
+    </nav>
+  </div>
+</header>
+
